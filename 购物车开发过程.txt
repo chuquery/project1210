@@ -1,0 +1,21 @@
+购物车开发过程
+前端：
+1.渲染list.html(列表页面)
+2.渲染的list页面下面的li元素设置链接。
+    - 不同的商品对应的是一个相同的详情页面，只不过里面的数据不一样。
+    - 通过当前的链接传输一个sid给详情页(detail.html)
+3.detail.html(详情页面)
+    - 通过地址栏获取列表页面传入的sid
+    - 将sid传给对应的后端，后端将通过sid返回这条数据给前端。
+    - 前端根据不同sid进行渲染不同的内容。
+
+4.cart.html(购物车展示商品列表页面)
+    - 先通过详情页存储商品的数量num和编号sid(区分第一次存储还是多次存储)
+    - cookie实现，提前设置cookienum和cookiesid进行存储对应商品的sid和num
+    - 渲染购物车商品列表 - 隐藏一个列表，对隐藏的列表进行克隆，无需渲染，直接对克隆的元素进行赋值。
+
+
+
+后端：
+1.渲染列表的数据接口。
+http://localhost/JS2010/week06/Day%2029-Day%2031_jquery/projectname/php/listdata.php
